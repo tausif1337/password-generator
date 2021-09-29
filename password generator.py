@@ -21,8 +21,6 @@ def generator(x):
     u=copy1(pa)
     return pa
 
-
-
 def call_result(label_result, n1):  
     num1 = (n1.get())  
     result = generator(num1) 
@@ -34,10 +32,7 @@ def copy1(a):
     pyperclip.copy(a)
     labelNum8 = tk.Label(root, text="'Password Copied to Clipboard'").grid(row=7, column=0)
     labelNum8 = tk.Label(root, text="Developed by Md. Tausif Hossain").grid(row=30, column=1)
-    
 
-    
-   
 root = tk.Tk()  
 root.geometry('700x200')  
   
@@ -47,20 +42,14 @@ number1 = tk.StringVar()
   
 labelNum1 = tk.Label(root, text="Enter Password Length in numbers").grid(row=1, column=0)
 
-  
- 
-  
 labelResult = tk.Label(root)  
   
 labelResult.grid(row=7, column=2)
   
 entryNum1 = tk.Entry(root, textvariable=number1).grid(row=1, column=1)  
-  
-  
+
 call_result = partial(call_result, labelResult, number1)  
   
 buttonCal = tk.Button(root, text="Generate Password", command=call_result).grid(row=3, column=1)
-
-
-  
+ 
 root.mainloop()  
